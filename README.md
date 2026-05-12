@@ -5,6 +5,7 @@
 **Author:** J. York Seale (ORCID: [0009-0008-7993-0310](https://orcid.org/0009-0008-7993-0310))
 **License:** MIT
 **Programme:** PLACE TO STAND Research Programme
+**Cite as:** Seale, J. York (2026). *SIDE-trivium v0.1.* Zenodo. DOI: [10.5281/zenodo.19938003](https://doi.org/10.5281/zenodo.19938003) (versioned), [10.5281/zenodo.19938002](https://doi.org/10.5281/zenodo.19938002) (concept). Software Heritage: `swh:1:dir:353279041c4b7dc82b7280fa81c7c211269b789d`.
 
 ---
 
