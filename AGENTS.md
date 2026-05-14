@@ -57,22 +57,28 @@ Expected output: `Trivium.triviumBijection depends on no axioms`.
 
 ## Theorems exported
 
-The kernel contains 12 theorems plus supporting declarations. Key exports in `Trivium/Bijection.lean`:
+Key exports in `Trivium/Bijection.lean`:
 
 - **`MechanismClass`** — finite type with seven inhabitants, one per voice (C₁–C₇)
 - **`QuadraticDiscriminant`** — finite type with seven inhabitants {−1, 2, −2, 3, −3, 6, −6}
-- **`triviumBijection : MechanismClass ≃ QuadraticDiscriminant`** — the named bijection
-- Decidability and Fintype instances on both types
-- Component theorems establishing each pair:
-  - C₁ Schwarz ↔ d = −1 ↔ ℚ(i)
-  - C₂ Euler ↔ d = 2 ↔ ℚ(√2)
-  - C₃ Functional Equation ↔ d = −2
-  - C₄ Modular ↔ d = 3
-  - C₅ Spectral ↔ d = −3 (Eisenstein)
-  - C₆ Cauchy-Riemann ↔ d = 6
-  - C₇ Hadamard ↔ d = −6
+- **`triviumBijection : MechanismClass ≃ QuadraticDiscriminant`** — the named bijection (an `Equiv` bundle of `mechanismToDiscriminant`, `discriminantToMechanism`, and the two inverse-pairing proofs)
+- **`mechanism_class_card`** / **`quadratic_discriminant_card`** — both finite types have cardinality 7
+- **`exponent_triple_nonzero`** / **`exponent_triple_injective`** — every discriminant maps to a non-zero element of (ℤ/2)³ via the squarefree-part exponent encoding, and the encoding is injective
+- **`discriminant_values_distinct`** — the seven integer values are pairwise distinct
+- **`all_discriminants_squarefree`** — each of the seven discriminants is squarefree
+- **`trivium_theorem`** — the structural theorem: bijection exists, both cardinalities are 7
 
-The proof reduces to `native_decide` over finite types.
+Component pairings established by the bijection:
+
+- C₁ Schwarz ↔ d = −1 ↔ ℚ(i)
+- C₂ Euler ↔ d = 2 ↔ ℚ(√2)
+- C₃ Functional Equation ↔ d = −2
+- C₄ Modular ↔ d = 3
+- C₅ Spectral ↔ d = −3 (Eisenstein)
+- C₆ Cauchy-Riemann ↔ d = 6
+- C₇ Hadamard ↔ d = −6
+
+The proofs reduce to `native_decide` or `cases ... <;> rfl` over the seven-element finite types.
 
 ---
 
