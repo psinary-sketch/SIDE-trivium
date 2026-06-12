@@ -72,7 +72,7 @@ inductive MechanismClass : Type
 deriving Fintype, DecidableEq, Repr
 
 theorem mechanism_class_card : Fintype.card MechanismClass = 7 := by
-  native_decide
+  decide
 
 /-! ## Section 2. The Seven Quadratic Discriminants
 
@@ -97,7 +97,7 @@ inductive QuadraticDiscriminant : Type
 deriving Fintype, DecidableEq, Repr
 
 theorem quadratic_discriminant_card : Fintype.card QuadraticDiscriminant = 7 := by
-  native_decide
+  decide
 
 /-- Recover the integer value of a discriminant. -/
 def QuadraticDiscriminant.value : QuadraticDiscriminant → Int
