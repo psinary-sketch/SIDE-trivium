@@ -72,7 +72,7 @@ SIDE-trivium is one of four public Lean repositories in the PLACE TO STAND progr
 
 | Repository | Role |
 |:-----------|:-----|
-| [SIDE-kernel](https://github.com/psinary-sketch/SIDE-kernel) | RH proof. 365 theorems, 0 sorry, 0 axioms. |
+| [SIDE-kernel](https://github.com/psinary-sketch/SIDE-kernel) | RH proof — cited by named terminal, not by count: the three route terminals at their pinned commits, each `{propext, Classical.choice, Quot.sound}`, 0 sorry. |
 | [SIDE-cosmo](https://github.com/psinary-sketch/SIDE-cosmo) | Cosmological extension. Formation phase space, dark sector theorem. |
 | [SIDE-effects](https://github.com/psinary-sketch/SIDE-effects) | Nine framework consequences. Yang-Mills, GRH, BSD, Artin, others. |
 | **SIDE-trivium** | **The seven-fold bijection. (this repo)** |
