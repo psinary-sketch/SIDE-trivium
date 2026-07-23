@@ -1,6 +1,8 @@
 # SIDE-trivium
 
-**Lean 4 formalization of the Trivium bijection: seven mechanism classes ↔ seven quadratic discriminants.**
+**Lean 4 formalization of the Trivium count-bijection: the seven mechanism classes and the seven quadratic discriminants have equal count (a theorem, `trivium_theorem`).**
+
+The **element-level** ↔ assignment between classes and discriminants is a canonical-order **convention, not canonical** — the map is basis-relative under GL(3,𝔽₂), and an element-level assignment is forbidden-as-canonical by the functorial-limit negative theorem (`SEVEN_DISCRIMINANTS_AND_TRIVIUM` §4). What is compiled here is the count identity, not a forced element pairing.
 
 **Author:** J. York Seale (ORCID: [0009-0008-7993-0310](https://orcid.org/0009-0008-7993-0310))
 **License:** MIT
