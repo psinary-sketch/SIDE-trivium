@@ -27,16 +27,17 @@
   This module proves:
 
     1. MechanismClass and QuadraticDiscriminant are finite types of
-       cardinality 7 each.
+       cardinality 7 each;
 
-    2. The pairing function `mechanismToDiscriminant` is a bijection
-       (decidable check on a 7-element set).
+    2. the chosen pairing mechanismToDiscriminant (a canonical-order
+       convention) is a bijection;
 
-    3. The discriminants generate exactly the seven nontrivial elements
-       of (ℤ/2)³ via the squarefree-part exponent encoding.
+    3. the exponent-triple table is injective and avoids (0,0,0);
 
-    4. Each discriminant defines a quadratic field ℚ(√d), and the seven
-       fields are pairwise non-isomorphic.
+    4. the seven integer values are pairwise distinct.
+
+  The fields ℚ(√d) and their pairwise non-isomorphism are not formalized
+  (v0.2).
 
   v0.1 — Initial release, complete on the seven-element finite-type level.
 
@@ -55,7 +56,8 @@ namespace Trivium
 /-! ## Section 1. The Seven Mechanism Classes
 
 The kernel's canonical numbering, as established in SIDE-kernel's
-`Formation.lean`. We re-state the type here for the bijection module's
+`Bridge/TheBridgeComplete.lean` (MechanismClass, C1–C7). We re-state the
+type here for the bijection module's
 local use; in a future version this will be imported from SIDE-kernel
 directly.
 -/
@@ -237,22 +239,26 @@ def QuadraticDiscriminant.isSquarefree (d : QuadraticDiscriminant) : Prop :=
   | -6 => True
   | _  => False
 
-/-- Every Trivium discriminant is squarefree. -/
+/-- Every Trivium discriminant satisfies the lookup predicate isSquarefree
+(its value is one of the seven listed squarefree integers); squarefreeness
+in Mathlib's sense is not stated. -/
 theorem all_discriminants_squarefree (d : QuadraticDiscriminant) :
     d.isSquarefree := by
   cases d <;> simp [QuadraticDiscriminant.isSquarefree, QuadraticDiscriminant.value]
 
 /-! ## Section 6. The Trivium Theorem
 
-The main result: the bijection `triviumBijection` connects the seven
-mechanism classes of ξ(s) to the seven nontrivial quadratic discriminants,
-and the discriminants are exactly the (ℤ/2)³ orbit over {−1, 2, 3}.
+The main result: the seven mechanism classes and the seven nontrivial
+quadratic discriminants have equal count 7 and are equivalent as finite
+types (via the chosen pairing `triviumBijection`); separately, the
+discriminants' exponent-triple table is injective into the nonzero
+elements of (ℤ/2)³.
 -/
 
-/-- The Trivium structural theorem (v0.1 version).
-
-    The mechanism classes of ξ(s) and the nontrivial quadratic discriminants
-    over (ℤ/2)³ are in canonical bijection, and both have cardinality 7. -/
+/-- The Trivium structural theorem (v0.1 version): the mechanism classes and
+    the nontrivial quadratic discriminants are equinumerous, both of
+    cardinality 7, so an equivalence between them exists; the element-level
+    pairing is a convention. -/
 theorem trivium_theorem :
     Nonempty (MechanismClass ≃ QuadraticDiscriminant) ∧
     Fintype.card MechanismClass = 7 ∧
