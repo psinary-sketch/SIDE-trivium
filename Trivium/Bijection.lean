@@ -3,11 +3,11 @@
 
   The Trivium Bijection: Seven Mechanism Classes ↔ Seven Quadratic Discriminants
 
-  This module formalizes one of the deepest structural findings of the
-  PLACE TO STAND research programme: the seven mechanism classes that
-  govern off-line zero exclusion for ξ(s) correspond exactly to the seven
-  nontrivial quadratic field discriminants in the (ℤ/2)³ structure over
-  the discriminant set {−1, 2, 3}.
+  This module formalizes, at the level of two seven-element finite types,
+  the count identity between the seven mechanism classes that govern
+  off-line zero exclusion for ξ(s) and the seven nontrivial quadratic field
+  discriminants over the discriminant set {−1, 2, 3} (trivium_theorem); the
+  element-level pairing below is a canonical-order convention.
 
   The bijection:
 
@@ -20,9 +20,11 @@
       C₆ Cauchy-Riem   d = 6              ℚ(√6)
       C₇ Hadamard      d = −6             ℚ(√−6)
 
-  The seven discriminants are exactly the seven nontrivial elements of
-  (ℤ/2)³ when the three coordinates are interpreted as exponents of
-  {−1, 2, 3} in the squarefree part of d.
+  The exponent-triple table (the three coordinates read as exponents of
+  {−1, 2, 3} in the squarefree part of d) is injective and avoids (0,0,0)
+  (exponent_triple_injective, exponent_triple_nonzero); that the seven
+  discriminants are exactly the seven nontrivial elements of (ℤ/2)³ is not
+  stated in Lean here.
 
   This module proves:
 
