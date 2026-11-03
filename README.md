@@ -1,6 +1,10 @@
 # SIDE-trivium
 
-**Lean 4 formalization of the Trivium count-bijection: the seven mechanism classes and the seven quadratic discriminants have equal count (a theorem, `trivium_theorem`).**
+SIDE-trivium compiles an equivalence between two seven-constructor enumerations. Statements at ec92d62:
+
+    theorem trivium_theorem : Nonempty (MechanismClass ≃ QuadraticDiscriminant) ∧ Fintype.card MechanismClass = 7 ∧ Fintype.card QuadraticDiscriminant = 7 (Trivium/Bijection.lean :256)
+
+Any two seven-element types carry such an equivalence. The enumerations are named for mechanism classes and discriminants; no statement names ξ, a zero, an exclusion or a field, so that they govern off-line zero exclusion is not compiled.
 
 The **element-level** ↔ assignment between classes and discriminants is a canonical-order **convention, not canonical** — the map is basis-relative under GL(3,𝔽₂), and an element-level assignment is forbidden-as-canonical by the functorial-limit negative theorem (`SEVEN_DISCRIMINANTS_AND_TRIVIUM` §4). What is compiled here is the count identity, not a forced element pairing.
 
@@ -13,41 +17,22 @@ The **element-level** ↔ assignment between classes and discriminants is a cano
 
 ## What this kernel proves
 
-The seven mechanism classes that govern off-line zero exclusion for the completed Riemann zeta function ξ(s) correspond exactly to the seven nontrivial quadratic field discriminants in the (ℤ/2)³ structure over the discriminant set {−1, 2, 3}.
-
 The bijection:
-
-| Class | Discriminant | Quadratic field |
-|:--|:--|:--|
-| C₁ Schwarz | d = −1 | ℚ(i) |
-| C₂ Euler balance | d = 2 | ℚ(√2) |
-| C₃ Functional equation | d = −2 | ℚ(√−2) |
-| C₄ Modular | d = 3 | ℚ(√3) |
-| C₅ Spectral | d = −3 | ℚ(√−3) |
-| C₆ Cauchy-Riemann | d = 6 | ℚ(√6) |
-| C₇ Hadamard | d = −6 | ℚ(√−6) |
-
-The seven discriminants are exactly the seven nontrivial elements of (ℤ/2)³ when the three coordinates are interpreted as exponents of {−1, 2, 3} in the squarefree part of d.
 
 ## v0.1 contents
 
 A single Lean module, `Trivium/Bijection.lean`, containing:
 
-- The `MechanismClass` finite type (7 inhabitants, canonical kernel numbering).
-- The `QuadraticDiscriminant` finite type (7 inhabitants, the squarefree values listed above).
 - The pairing function `mechanismToDiscriminant` and its inverse.
 - A proof that the pairing is a bijection (`triviumBijection : MechanismClass ≃ QuadraticDiscriminant`).
 - The (ℤ/2)³ exponent-triple encoding, with proof that every discriminant maps to a non-zero element.
 - The pairwise-distinctness theorem on the integer values of the seven discriminants.
-- A squarefreeness witness for each discriminant.
 - The main theorem `trivium_theorem`, asserting the bijection and the cardinality match.
 
 | Metric | Value |
 |:-------|:------|
 | Files | 1 |
-| Theorems | 12 |
 | Sorry | 0 |
-| Axioms | 0 (beyond Lean core: `propext`, `Quot.sound`, `Classical.choice`) |
 
 ## Building
 
@@ -76,8 +61,6 @@ SIDE-trivium is one of four public Lean repositories in the PLACE TO STAND progr
 | [SIDE-cosmo](https://github.com/psinary-sketch/SIDE-cosmo) | Cosmological extension. Formation phase space, dark sector theorem. |
 | [SIDE-effects](https://github.com/psinary-sketch/SIDE-effects) | Nine framework consequences. Yang-Mills, GRH, BSD, Artin, others. |
 | **SIDE-trivium** | **The seven-fold bijection. (this repo)** |
-
-SIDE-trivium crystallizes one of the deepest structural findings of the programme into a single auditable artifact. The pairing of mechanism classes with quadratic discriminants is what makes "the seven is not a coincidence" formally precise.
 
 ## References
 
